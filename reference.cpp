@@ -9,7 +9,10 @@ using namespace std;
 int main() {
     int x = 10;
     int &r = x; // r is alias of x
-    // reference variables must be initialized during declaration
+    /*
+    reference variables must be 
+    initialized during declaration
+    */ 
     cout << "x = " << x << endl;
     cout << "r = " << r << endl;
     r += 1; // x += 1
