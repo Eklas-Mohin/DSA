@@ -9,8 +9,7 @@
 
 void mod_array(int arr[], int len) {
     for (int i = 0; i < len; ++i) {
-        *(arr + i) = *(arr + i) * 5; 
-        // Original array is modified
+        arr[i] = arr[i] * 5;
     }
 }
 
