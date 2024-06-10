@@ -10,7 +10,7 @@
 void mod_array(int arr[], int len) {
     for (int i = 0; i < len; ++i) {
         *(arr + i) = *(arr + i) * 5; 
-        // original array is modified
+        // Original array is modified
     }
 }
 
@@ -30,5 +30,5 @@ int main() {
 }
 
 /*
- arrays are only passed by reference
+    Arrays are only passed by reference
 */
