@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void swap_num(int &a, int &b) {
+void swap_num(int &a, int &b) { // call by reference
     int temp = a;
     a = b;
     b = temp;
@@ -16,13 +16,7 @@ void swap_num(int &a, int &b) {
 int main() {
     int a = 15, b = 51;
     cout << "before swapping <> a = "<< a << "  b = " << b << endl; 
-    swap_num(a, b); // swap_num function is pasted here (machine code)
+    swap_num(a, b);
     cout << "after swapping <> a = "<< a << "  b = " << b << endl;
     return 0;
 }
-
-/*
-    Here, the source code is procedural/modular
-    but the machine code is monolithic
-    Note: Don't use this feature of C++ frequently
-*/
