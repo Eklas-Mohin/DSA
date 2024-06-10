@@ -20,11 +20,11 @@ void pointer_size() {
     float *p3;
     double *p4;
     struct demo *p5;
-    printf("int <<>> sizeof(ptr) = %d\n", sizeof(p1)); // 8
-    printf("char <<>> sizeof(ptr) = %d\n", sizeof(p2)); // 8
-    printf("float <<>> sizeof(ptr) = %d\n", sizeof(p3)); // 8
-    printf("double <<>> sizeof(ptr) = %d\n", sizeof(p4)); // 8
-    printf("struct demo <<>> sizeof(ptr) = %d\n\n", sizeof(p5)); // 8
+    printf("int <> sizeof(ptr) = %d\n", sizeof(p1)); // 8
+    printf("char <> sizeof(ptr) = %d\n", sizeof(p2)); // 8
+    printf("float <> sizeof(ptr) = %d\n", sizeof(p3)); // 8
+    printf("double <> sizeof(ptr) = %d\n", sizeof(p4)); // 8
+    printf("struct demo <> sizeof(ptr) = %d\n\n", sizeof(p5)); // 8
     // size of a pointer is independent of its data type
 }
 
