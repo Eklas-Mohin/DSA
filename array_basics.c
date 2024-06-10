@@ -33,36 +33,34 @@ int main() {
         printf("%d ", *(arr + i));
     }
     printf("\n");
-    int gr[length]; // variable length array has garbage values
+    int gr[length]; // Variable length array has garbage values
     for (int i = 0; i < length; ++i) {
-        printf("%d ", gr[i]); // garbage
+        printf("%d ", gr[i]); // Garbage
     }
     printf("\n");
-    int x[10] = {1, 2, 3, 5}; // constant value as length
+    int x[10] = {1, 2, 3, 5}; // Constant value as length
     for (int i = 0; i < 10; ++i) {
-        printf("%d ", x[i]); // 0 --> which are not initialized
+        printf("%d ", x[i]); // 0 --> Which are not initialized
     }
     printf("\n");
     printf("length of the array : ");
     scanf("%d", &length);
     int my_arr[length]; 
-    /*
-    variable length arrays cannot be initialized during declaration
-    */
+    // Variable length arrays cannot be initialized during declaration
     for (int i = 0; i < length; ++i) {
-        scanf("%d", &my_arr[i]); // taking input from user
+        scanf("%d", &my_arr[i]); // Taking input from user
     }
     for (int i = 0; i < length; ++i) {
         printf("arr[%d]: %d\n", i, my_arr[i]);
     }
-    int zero[5] = {}; // all the elements are zero
+    int zero[5] = {}; // All the elements are initialized with zero
     for (int i = 0; i < 5; ++i) {
         printf("%d ", zero[i]);
     }
     printf("\n");
-    int a[5]; // uninitialized array has garbage values
+    int a[5]; // Uninitialized array has garbage values
     for (int i = 0; i < 5; ++i) {
-        printf("%d ", a[i]); // garbage
+        printf("%d ", a[i]); // Garbage
     }
     printf("\n");
     return 0;
