@@ -7,22 +7,22 @@
 #include <string.h>
 #include <math.h>
 
-#define MAX_LIMIT 30
+#define MAX_LIMIT 25
 
-// user defined data type
-struct rectangle {
+// User-defined data types
+struct Rectangle {
     double length;
     double breadth;
     double area;
 };
 
-struct complex {
+struct Complex {
     int real;
-    char sign; // allocate 4 bytes but uses only 1 (concept --> padding)
+    char sign; // Allocate 4 bytes but uses only 1 (concept --> padding)
     int imaginary;
 };
 
-struct candidate {
+struct Candidate {
     int rank;
     char name[MAX_LIMIT];
     char dept[MAX_LIMIT];
@@ -30,90 +30,79 @@ struct candidate {
     char address[MAX_LIMIT];
 };
 
-void calculate(struct rectangle r) {
+// Function to calculate the area of a rectangle
+void calculate_area(struct Rectangle r) {
     r.area = r.length * r.breadth;
     printf("Length = %0.2lf\nBreadth = %0.2lf\n", r.length, r.breadth);
     printf("Area = %0.2lf unit\n", r.area);
 }
 
-void complex_number(struct complex c ) {
+// Function to print a complex number
+void print_complex_number(struct Complex c) {
     printf("x = %d %c i%d \n", c.real, c.sign, c.imaginary);
 }
 
-void print_list(struct candidate c) {
-    int x = 0;
+// Function to print candidate details
+void print_candidate_details(struct Candidate c) {
     printf("      Rank: %03d", c.rank);
-    printf("      Name: ");
-    for (int i = 0; i < strlen(c.name) - 1; ++i) {
-        printf("%c", c.name[i]);
-    }
-    x = 25 - strlen(c.name);
-    for (int i = 0; i < x; ++i) {
-        printf(" ");
-    }
-    printf("      Department: ");
-    for (int i = 0; i < strlen(c.dept) - 1; ++i) {
-        printf("%c", c.dept[i]);
-    }
-    x = 5 - strlen(c.dept);
-    for (int i = 0; i < x; ++i) {
-        printf(" ");
-    }
-    printf("      Institute: ");
-    for (int i = 0; i < strlen(c.institute) - 1; ++i) {
-        printf("%c", c.institute[i]);
-    }
-    x = 5 - strlen(c.institute);
-    for (int i = 0; i < x; ++i) {
-        printf(" ");
-    }
-    printf("      Address: ");
-    for (int i = 0; i < strlen(c.address) - 1; ++i) {
-        printf("%c", c.address[i]);
-    }
-    x = 30 - strlen(c.address);
-    for (int i = 0; i < x; ++i) {
-        printf(" ");
-    }
-    printf("\n");
+    printf("      Name: %-25s", c.name);
+    printf("      Department: %-25s", c.dept);
+    printf("      Institute: %-25s", c.institute);
+    printf("      Address: %-25s\n", c.address);
 }
 
+// Function to create and print a list of candidates
 void candidate_list() {
-    int n; char temp;
-    printf("Number of candidates : ");
-    scanf("%d", &n); scanf("%c", &temp);
-    struct candidate list[n]; // array of structure candidate
+    int n;
+    char temp;
+
+    printf("Number of candidates: ");
+    scanf("%d", &n);
+    scanf("%c", &temp); // To consume the newline character after the integer input
+
+    struct Candidate list[n]; // Array of structure Candidate
+
     for (int i = 0; i < n; ++i) {
         list[i].rank = i + 1;
-        printf("Name : ");
+        printf("Name: ");
         fgets(list[i].name, MAX_LIMIT, stdin);
+        list[i].name[strcspn(list[i].name, "\n")] = 0; // Remove the newline character
         printf("Department: ");
         fgets(list[i].dept, MAX_LIMIT, stdin);
-        printf("Institute : ");
+        list[i].dept[strcspn(list[i].dept, "\n")] = 0;
+        printf("Institute: ");
         fgets(list[i].institute, MAX_LIMIT, stdin);
-        printf("Address : ");
+        list[i].institute[strcspn(list[i].institute, "\n")] = 0;
+        printf("Address: ");
         fgets(list[i].address, MAX_LIMIT, stdin);
+        list[i].address[strcspn(list[i].address, "\n")] = 0;
     }
-    printf("                                               ----------- Candidate List -----------\n\n\n");
+
+    printf("                                              ----------- Candidate List -----------\n\n");
     for (int i = 0; i < n; ++i) {
-        print_list(list[i]);
+        print_candidate_details(list[i]);
     }
     printf("\n");
 }
 
 int main() {
-    struct rectangle r1; // only declaration
-    printf("Enter length of the rectangle : ");
+    struct Rectangle r1;
+
+    printf("Enter length of the rectangle: ");
     scanf("%lf", &r1.length);
-    printf("Enter breadth of the rectangle : ");
+    printf("Enter breadth of the rectangle: ");
     scanf("%lf", &r1.breadth);
-    calculate(r1);
-    struct complex c1 = {3, '+', 5}; // declaration and initialization
-    complex_number(c1);
-    // size of data types are machine dependent
-    printf("sizeof(struct rectangle) = %lu\n", sizeof(struct rectangle)); // 24
-    printf("sizeof(struct candidate) = %lu\n", sizeof(struct candidate)); // 124
-    printf("sizeof(struct complex) = %lu\n", sizeof(struct complex)); // 12
+    calculate_area(r1);
+
+    struct Complex c1 = {3, '+', 5}; // Declaration and initialization
+    print_complex_number(c1);
+
+    // Size of data types are machine dependent
+    printf("sizeof(struct Rectangle) = %lu\n", sizeof(struct Rectangle)); // 24
+    printf("sizeof(struct Candidate) = %lu\n", sizeof(struct Candidate)); // 104
+    printf("sizeof(struct Complex) = %lu\n", sizeof(struct Complex)); // 12
+
     candidate_list();
+
     return 0;
 }
