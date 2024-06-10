@@ -20,7 +20,6 @@ int main() {
     printf("before calling swap function <> a = %d   b = %d \n", a, b);
     swap(a, b); // Actual parameters remain same
     printf("after calling swap function <> a = %d   b = %d \n", a, b);
-    
     return 0;
 }
 
