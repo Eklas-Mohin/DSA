@@ -7,23 +7,22 @@
 #include <string.h>
 #include <math.h>
 
-void swap(int *a, int *b) { // call by reference
+void swap(int *a, int *b) { // Call by reference
     int temp = *a;
     *a = *b;
-    *b = temp;
+    *b = temp; // Formal parameters are modified
     printf("swap function <> a = %d   b = %d \n", *a, *b);
-    // formal parameters are modified
+    
 }
 
 int main() {
     int a = 15, b = 51;
     printf("before calling swap function <> a = %d   b = %d \n", a, b);
-    swap(&a, &b);
+    swap(&a, &b); // Actual parameters are modified
     printf("after calling swap function <> a = %d   b = %d \n", a, b);
-    // actual parameters are also modified
     return 0;
 }
 
 /*
- call by reference == pass by reference
+    Call by reference == Pass by reference
 */
