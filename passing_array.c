@@ -14,7 +14,7 @@ void mod_array(int arr[], int len) {
 }
 
 int main() {
-    int arr[] = {1, 5, 25, 125, 625, 3125};
+    int arr[] = {1, 5, 25, 125, 625};
     int len = sizeof(arr) / sizeof(int);
     for (int i = 0; i < len; ++i) {
         printf("%d ", arr[i]);
