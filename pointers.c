@@ -7,7 +7,7 @@
 #include <string.h>
 #include <math.h>
 
-struct demo {
+struct Demo {
     int p1;
     char p2;
     float p3;
@@ -19,7 +19,7 @@ void pointer_size() {
     char *p2;
     float *p3;
     double *p4;
-    struct demo *p5;
+    struct Demo *p5;
 
     // Size of a pointer is independent of its data type
     printf("int <> sizeof(ptr) = %d\n", sizeof(p1)); // 8
