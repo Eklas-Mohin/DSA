@@ -7,21 +7,21 @@
 #include <string.h>
 #include <math.h>
 
-void swap(int a, int b) { // Call by value
+void swapFunction(int a, int b) {
     int temp = a;
     a = b;
-    b = temp; // Formal parameters are modified
+    b = temp; // Actual parameters remains the same
     printf("Swap function <> a = %d   b = %d \n", a, b);
 }
 
 int main() {
     int a = 15, b = 51;
+
     printf("Before calling swap function <> a = %d   b = %d \n", a, b);
-    swap(a, b); // Actual parameters remains the same
+    swapFunction(a, b); // Call by value
     printf("After calling swap function <> a = %d   b = %d \n", a, b);
+
     return 0;
 }
 
-/*
-    Call by value == Pass by value
-*/
+// Call by value == Pass by value
