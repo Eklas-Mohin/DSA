@@ -48,7 +48,7 @@ int main() {
     }
     printf("\n");
 
-    printf("length of the array : ");
+    printf("Enter length of the array : ");
     scanf("%d", &length);
     int my_arr[length]; 
     // Variable length arrays cannot be initialized during declaration
