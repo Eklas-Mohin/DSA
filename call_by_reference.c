@@ -10,7 +10,7 @@
 void swapFunction(int *a, int *b) { 
     int temp = *a;
     *a = *b;
-    *b = temp;  // Actual parameters are modified
+    *b = temp; // Actual parameters are modified
     printf("Swap function <> a = %d   b = %d \n", *a, *b);
 }
 
