@@ -18,7 +18,7 @@ int* array(int len) {
 
 int main() {
     int len;
-    printf("length of the array : ");
+    printf("Enter length of the array : ");
     scanf("%d", &len);
     int *heap_arr = array(len);
     for (int i = 0; i < len; ++i) {
@@ -27,4 +27,3 @@ int main() {
     printf("\n");
     return 0;
 }
-
