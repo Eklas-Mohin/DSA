@@ -26,19 +26,21 @@ int main() {
         *(arr + i) = arr[i] * 2;
     }
     printf("\n");
+
     for (int i = 0; i < length; ++i) {
         printf("%d ", arr[i]);
     }
     printf("\n");
+
     for (int i = 0; i < length; ++i) {
         printf("%d ", *(arr + i));
     }
     printf("\n");
 
-    printf("Enter length of the array = %d\n", length);
-    int gr[length]; // Variable length array has garbage values
+    printf("Length of the array = %d\n", length);
+    int grb[length]; // Uninitialized Variable length array has garbage values
     for (int i = 0; i < length; ++i) {
-        printf("%d ", gr[i]); // Garbage
+        printf("%d ", grb[i]); // Garbage
     }
     printf("\n");
 
