@@ -7,7 +7,7 @@
 #include <string.h>
 #include <math.h>
 
-void mod_array(int arr[], int len) {
+void modifyArray(int arr[], int len) {
     for (int i = 0; i < len; ++i) {
         arr[i] = arr[i] * 5;
     }
@@ -16,18 +16,20 @@ void mod_array(int arr[], int len) {
 int main() {
     int arr[] = {1, 5, 25, 125, 625};
     int len = sizeof(arr) / sizeof(int);
+
     for (int i = 0; i < len; ++i) {
         printf("%d ", arr[i]);
     }
     printf("\n");
-    mod_array(arr, len);
+
+    modifyArray(arr, len);
     for (int i = 0; i < len; ++i) {
         printf("%d ", arr[i]);
     }
     printf("\n");
+
     return 0;
 }
 
-/*
-    Arrays are only passed by reference
-*/
+// Arrays are only passed by reference
+
