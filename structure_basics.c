@@ -7,7 +7,7 @@
 #include <string.h>
 #include <math.h>
 
-#define MAX_LIMIT 25
+#define MAX_LIMIT 26
 
 // User-defined data types
 struct Rectangle {
@@ -31,19 +31,19 @@ struct Candidate {
 };
 
 // Function to calculate the area of a rectangle
-void calculate_area(struct Rectangle r) {
+void calculateArea(struct Rectangle r) {
     r.area = r.length * r.breadth;
     printf("Length = %0.2lf\nBreadth = %0.2lf\n", r.length, r.breadth);
     printf("Area = %0.2lf unit\n", r.area);
 }
 
 // Function to print a complex number
-void print_complex_number(struct Complex c) {
+void printComplexNumber(struct Complex c) {
     printf("x = %d %c i%d \n", c.real, c.sign, c.imaginary);
 }
 
 // Function to print candidate details
-void print_candidate_details(struct Candidate c) {
+void printCandidateDetails(struct Candidate c) {
     printf("      Rank: %03d", c.rank);
     printf("      Name: %-25s", c.name);
     printf("      Department: %-25s", c.dept);
@@ -52,7 +52,7 @@ void print_candidate_details(struct Candidate c) {
 }
 
 // Function to create and print a list of candidates
-void candidate_list() {
+void candidateList() {
     int n;
     char temp;
 
@@ -80,7 +80,7 @@ void candidate_list() {
 
     printf("                                              ----------- Candidate List -----------\n\n");
     for (int i = 0; i < n; ++i) {
-        print_candidate_details(list[i]);
+        printCandidateDetails(list[i]);
     }
     printf("\n");
 }
@@ -92,17 +92,17 @@ int main() {
     scanf("%lf", &r1.length);
     printf("Enter breadth of the rectangle: ");
     scanf("%lf", &r1.breadth);
-    calculate_area(r1);
+    calculateArea(r1);
 
     struct Complex c1 = {3, '+', 5}; // Declaration and initialization
-    print_complex_number(c1);
+    printComplexNumber(c1);
 
     // Size of data types are machine dependent
     printf("sizeof(struct Rectangle) = %lu\n", sizeof(struct Rectangle)); // 24
     printf("sizeof(struct Candidate) = %lu\n", sizeof(struct Candidate)); // 104
     printf("sizeof(struct Complex) = %lu\n", sizeof(struct Complex)); // 12
 
-    candidate_list();
+    candidateList();
 
     return 0;
 }
