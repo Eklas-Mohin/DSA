@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void swap_num(int &a, int &b) { // Call by reference
+void swapIntegers(int &a, int &b) { // Pass by reference
     int temp = a;
     a = b;
     b = temp;
@@ -15,8 +15,10 @@ void swap_num(int &a, int &b) { // Call by reference
 
 int main() {
     int a = 15, b = 51;
+
     cout << "Before swapping <> a = "<< a << "  b = " << b << endl; 
-    swap_num(a, b);
+    swapIntegers(a, b);
     cout << "After swapping <> a = "<< a << "  b = " << b << endl;
+    
     return 0;
 }
