@@ -14,12 +14,15 @@ int add(int a, int b) { // Formal parameters
 
 int main() {
     int num1, num2;
+
     printf("Enter an Integer : ");
     scanf("%d",&num1);
     printf("Enter another Integer : ");
     scanf("%d",&num2);
+    
     int sum = add(num1, num2); // Actual parameters
     printf("Sum = %d\n", sum);
+
     return 0;
 }
 
