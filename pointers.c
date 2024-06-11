@@ -14,7 +14,7 @@ struct Demo {
     double p4;
 };
 
-void pointer_size() {
+void pointerSize() {
     int *p1;
     char *p2;
     float *p3;
@@ -44,6 +44,7 @@ int main() {
     for (int i = 0; i < len; ++i) {
         heap[i] = i * 2 + 1;
     }
+    
     for (int i = 0; i < len; ++i) {
         printf("%d ", *(heap + i));
     }
@@ -57,7 +58,7 @@ int main() {
     }
     printf("\n");
 
-    pointer_size();
+    pointerSize();
 
     return 0;
 }
