@@ -10,6 +10,7 @@ int main() {
     }
     printf("\n");
 
+    // Selection Sort algorithm
     for (int i = 0; i < n - 1; ++i) {
         int min_idx = i;
         for (int j = i + 1; j < n; ++j) {
