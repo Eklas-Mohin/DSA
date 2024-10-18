@@ -1,33 +1,45 @@
 #include <stdio.h>
 
-int main() {
-    int arr[] = {17, 23, 7, 59, 73, 13, 37, 53, 47};
-    int n = sizeof(arr) / sizeof(arr[0]);
+void swap(int *xp, int *yp) {
+    int temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
 
-    printf("Unsorted Array:\n");
-    for (int i = 0; i < n; ++i) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+void selectionSort(int arr[], int size) {
+    for (int i = 0; i < size - 1; i++) {
+        int min_index = i;
 
-    // Selection Sort algorithm
-    for (int i = 0; i < n - 1; ++i) {
-        int min_idx = i;
-        for (int j = i + 1; j < n; ++j) {
-            if (arr[j] < arr[min_idx]) {
-                min_idx = j;
+        for (int j = i + 1; j < size; j++) {
+            if (arr[j] < arr[min_index]) {
+                min_index = j;
             }
         }
-        int temp = arr[min_idx];
-        arr[min_idx] = arr[i];
-        arr[i] = temp;
+
+        if (min_index != i) {
+            swap(&arr[i], &arr[min_index]);
+        }
     }
-    
-    printf("\nSorted Array:\n");
-    for (int i = 0; i < n; ++i) {
+}
+
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
     printf("\n");
+}
+
+int main() {
+    int arr[] = {17, 23, 7, 59, 73, 13, 37, 53, 47};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Unsorted Array:\n");
+    printArray(arr, size);
+
+    selectionSort(arr, size);
+
+    printf("\nSorted Array:\n");
+    printArray(arr, size);
 
     return 0;
 }
