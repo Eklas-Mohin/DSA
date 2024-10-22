@@ -32,3 +32,7 @@ int main() {
 
     return 0;
 }
+
+/*
+    Binary Search is only applicable when the array is sorted
+*/
