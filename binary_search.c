@@ -35,4 +35,5 @@ int main() {
 
 /*
     Binary Search is only applicable when the array is sorted
+    Time Complexity is O(log2(n))
 */
