@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void insertionSort(int arr[], int n) {
+void insertion_sort(int arr[], int n) {
     for (int i = 1; i < n; ++i) {
         int temp = arr[i];
         int idx = i - 1;
@@ -13,7 +13,7 @@ void insertionSort(int arr[], int n) {
     }
 }
 
-void printArray(int arr[], int n) {
+void print_array(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
@@ -25,12 +25,12 @@ int main() {
     int n = sizeof(arr) / sizeof(arr[0]);
 
     printf("Unsorted Array:\n");
-    printArray(arr, n);
+    print_array(arr, n);
 
-    insertionSort(arr, n);
+    insertion_sort(arr, n);
 
     printf("\nSorted Array:\n");
-    printArray(arr, n);
+    print_array(arr, n);
 
     return 0;
 }
