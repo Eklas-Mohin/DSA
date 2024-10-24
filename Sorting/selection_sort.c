@@ -6,7 +6,7 @@ void swap(int *xp, int *yp) {
     *yp = temp;
 }
 
-void selectionSort(int arr[], int size) {
+void selection_sort(int arr[], int size) {
     for (int i = 0; i < size - 1; i++) {
         int min_index = i;
 
@@ -22,7 +22,7 @@ void selectionSort(int arr[], int size) {
     }
 }
 
-void printArray(int arr[], int size) {
+void print_array(int arr[], int size) {
     for (int i = 0; i < size; i++) {
         printf("%d ", arr[i]);
     }
@@ -34,12 +34,12 @@ int main() {
     int size = sizeof(arr) / sizeof(arr[0]);
 
     printf("Unsorted Array:\n");
-    printArray(arr, size);
+    print_array(arr, size);
 
-    selectionSort(arr, size);
+    selection_sort(arr, size);
 
     printf("\nSorted Array:\n");
-    printArray(arr, size);
+    print_array(arr, size);
 
     return 0;
 }
